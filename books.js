@@ -16,7 +16,7 @@
                 if (book.comingSoon) {
                     coverHtml = `<div class="book-cover book-cover--coming-soon"><span>Coming Soon</span></div>`;
                 } else {
-                    coverHtml = `<div class="book-cover"><img src="${coverSrc}" alt="${book.title} cover" onerror="this.src='/assets/noBgBlackIcon.png'"></div>`;
+                    coverHtml = `<div class="book-cover"><img src="${coverSrc}" alt="${book.title} cover" onerror="this.src='/assets/favicon.svg'"></div>`;
                 }
 
                 if (book.purchaseLink) {

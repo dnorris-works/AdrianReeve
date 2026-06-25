@@ -54,7 +54,7 @@ async function loadBooksData() {
                         cover: meta.cover || '',
                         coverUrl: meta.cover && await coverExists(dir, meta.cover)
                             ? `/books/${dir}/${meta.cover}`
-                            : '/assets/noBgBlackIcon.png',
+                            : '/assets/favicon.svg',
                         comingSoon: meta.comingSoon || false
                     });
                 }
