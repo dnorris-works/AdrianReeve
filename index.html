@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Reeve — Thinker, Storyteller, Author</title>
+    <meta name="description" content="Adrian Reeve is the author of the Faithful Witness Series — fiction exploring faith, science, and consciousness. Books include Roots in Stone and The Judas Rope.">
+    <meta name="keywords" content="Adrian Reeve, author, Roots in Stone, The Judas Rope, The Faithful Witness, Faithful Witness Series, fiction, literary fiction, speculative fiction, faith and science, consciousness, Catholic fiction, archaeology fiction, books, ebooks, paperback, Deep Field Press, Amazon KDP">
+    <meta name="author" content="Adrian Reeve">
+    <meta property="og:title" content="Adrian Reeve — Thinker, Storyteller, Author">
+    <meta property="og:description" content="Author of the Faithful Witness Series — Roots in Stone, The Judas Rope. Fiction exploring faith, science, and consciousness.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/noBgBlackIcon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Adrian Reeve — Thinker, Storyteller, Author">
+    <meta name="twitter:description" content="Author of the Faithful Witness Series — Roots in Stone, The Judas Rope. Fiction exploring faith, science, and consciousness.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <img src="assets/noBgBlackIcon.png" alt="Adrian Reeve logo" class="logo">
+            <span class="site-title">Adrian Reeve</span>
+        </div>
+        <nav class="header-nav">
+            <a href="javascript:void(0)" class="nav-link" onclick="document.getElementById('about-modal').classList.add('active');document.body.style.overflow='hidden';">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay">
+                <h1 class="hero-heading">Author of romantic fiction.</h1>
+        </section>
+        <section class="newsletter">
+            <h2 class="newsletter-heading">Stay in the loop</h2>
+            <p class="newsletter-text">You email will not be shared, period.</p>
+            <div class="newsletter-form" id="newsletter-form">
+                <!-- MailerLite Universal -->
+                <script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '2370300');</script>
+                <!-- End MailerLite Universal -->
+                <div class="ml-embedded" data-form="SeVfZH"></div>
+            </div>
+        </section>
+        <section class="books">
+            <div class="books-grid" id="books-grid">
+                <!-- Books loaded dynamically from books/index.json -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <a href="dfp.html" class="footer-link">
+            <img src="assets/DeepFieldPress_Logo.jpg" alt="Deep Field Press logo" class="footer-logo">
+        </a>
+        <p class="footer-text">Published by Deep Field Press</p>
+    </footer>
+
+    <script src="books-data.js"></script>
+    <script src="books.js"></script>
+
+    <!-- About Modal -->
+    <div class="modal-overlay" id="about-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+            <h2 class="modal-heading">About</h2>
+            <div class="modal-body">
+                <p><b>Adrian Reeve</b> has always been drawn to the spaces where certainty frays—where the equations stop yielding answers and the questions begin. A lifelong fascination with science shaped an early view of the world as mechanism: elegant, deterministic, governed by laws that could be tested and known. That foundation held until it didn't. Something in the strangeness of the data—perhaps the observer effect, perhaps the fine-tuning problem, perhaps simply the stubborn mystery of consciousness—refused to resolve into matter alone.<br><br>The path to Catholicism was not a retreat from rigor but an extension of it. The Church's own history with science (Gregor Mendel in genetics, Georges Lemaître proposing the Big Bang, the Vatican Observatory still scanning the sky) offered permission to believe that faith and inquiry could coexist, even sharpen each other. The conversion was intellectual before it was devotional, and it remains both.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('about-modal');
+        var closeBtn = document.getElementById('modal-close');
+
+        if (!modal || !closeBtn) return;
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    </script>
+</body>
+</html>

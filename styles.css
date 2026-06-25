@@ -1,0 +1,518 @@
+/* ==========================================================================
+   styles.css — Adrian Reeve Author Website
+   ========================================================================== */
+
+/* ==========================================================================
+   Reset / Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #faf6f1;
+    --color-text: #2c2c2c;
+    --color-white: #ffffff;
+    --color-accent: #6b4c3b;
+    --color-muted: #8c7b6b;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6,
+.site-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.site-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+    max-width: 1200px;
+    margin: 24px auto;
+    min-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background-color: #1a1a2e;
+    background-image: url('assets/beku-kanomi-iqP50nJaLKk-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    border-radius: 0 0 0 12px;
+    min-height: 50%;
+}
+
+.hero-heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 48px;
+    color: var(--color-white);
+    margin: 0 0 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--color-white);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Newsletter
+   ========================================================================== */
+
+.newsletter {
+    max-width: 700px;
+    margin: 32px auto;
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.newsletter-heading {
+    font-size: 28px;
+    margin: 0 0 8px;
+    color: var(--color-text);
+}
+
+.newsletter-text {
+    font-size: 16px;
+    color: var(--color-muted);
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* MailerLite form overrides — shrink and simplify */
+.newsletter-form .ml-form-embedWrapper {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.newsletter-form .ml-form-embedContent {
+    display: none !important;
+}
+
+.newsletter-form .ml-form-embedBody {
+    padding: 0 !important;
+}
+
+.newsletter-form .ml-form-formContent {
+    margin-bottom: 0 !important;
+    padding-bottom: 8px !important;
+}
+
+.newsletter-form .ml-form-embedSubmit {
+    margin: 0 0 8px !important;
+}
+
+.newsletter-form .ml-form-checkboxRow {
+    margin-bottom: 4px !important;
+}
+
+.newsletter-form .ml-form-checkboxRow .label-description,
+.newsletter-form .ml-form-checkboxRow .label-description p {
+    font-size: 11px !important;
+    line-height: 16px !important;
+}
+
+.newsletter-form .ml-form-embedWrapper .ml-form-successBody {
+    padding: 10px 0 !important;
+}
+
+/* ==========================================================================
+   Books
+   ========================================================================== */
+
+.books {
+    max-width: 1200px;
+    margin: 48px auto;
+    padding: 0 24px;
+    background-color: var(--color-bg);
+}
+
+.books-heading {
+    font-size: 32px;
+    margin: 0 0 32px;
+    color: var(--color-text);
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-card {
+    text-align: center;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 2 / 3;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    margin: 0 auto;
+}
+
+.book-cover--coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+.book-cover--coming-soon span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: var(--color-white);
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-title {
+    margin: 12px 0 4px;
+    font-size: 15px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.book-description {
+    margin: 0;
+    font-size: 14px;
+    color: var(--color-muted);
+    line-height: 1.4;
+    text-align: left;
+}
+
+.book-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.book-link:hover .book-cover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.book-cover {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer-link {
+    display: inline-block;
+}
+
+.footer-logo {
+    width: 48px;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.footer-text {
+    font-size: 13px;
+    color: var(--color-muted);
+    margin: 0;
+}
+
+/* ==========================================================================
+   DFP Page
+   ========================================================================== */
+
+.dfp-content {
+    max-width: 800px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.dfp-heading {
+    font-size: 36px;
+    margin: 0 0 24px;
+}
+
+.dfp-subheading {
+    font-size: 22px;
+    margin: 32px 0 12px;
+    color: var(--color-text);
+}
+
+.dfp-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0 0 16px;
+}
+
+/* ==========================================================================
+   About Modal
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--color-bg);
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--color-muted);
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+}
+
+.modal-close:hover {
+    color: var(--color-text);
+}
+
+.modal-heading {
+    font-size: 24px;
+    margin: 0 0 16px;
+    color: var(--color-text);
+}
+
+.modal-body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.modal-body p {
+    margin: 0 0 12px;
+}
+
+.modal-body p:last-child {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .site-header {
+        padding: 16px 16px;
+        gap: 8px;
+    }
+
+    .header-left {
+        gap: 8px;
+    }
+
+    .site-title {
+        font-size: 18px;
+    }
+
+    .hero {
+        margin: 16px;
+        border-radius: 8px;
+        min-height: 450px;
+    }
+
+    .hero-overlay {
+        width: 100%;
+        padding: 24px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .hero-heading {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .books {
+        padding: 0 16px;
+        margin: 32px auto;
+    }
+
+    .books-heading {
+        font-size: 24px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* ==========================================================================
+   Status Badges
+   ========================================================================== */
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge--coming-soon {
+    background: #ffc107;
+    color: white;
+}
+
+.badge--available {
+    background: #28a745;
+    color: white;
+}
